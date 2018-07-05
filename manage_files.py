@@ -4,13 +4,14 @@ class FileManager():
     def __init__(self,dir=""):
         self.home_dir = dir
 
-    def make_unique_dir(self):
-        dir_name = ""
+    def make_unique_dir(self,name=""):
+        dir_name = name
         # 新規ディレクトが作成されるまでループ
         while(True):
             # ディレクトリ名を標準入力
-            print("Enter directory name, ex:test/sample")
-            dir_name = self.home_dir + "/" + input()
+            if unique_name == "":
+                dir_name=input("Enter directory name, ex:test/sample")
+            dir_name = self.home_dir + "/" + dir_name
 
             # ディレクトリ名に重複がない場合
             try:
