@@ -9,7 +9,7 @@ class FileManager():
         # 新規ディレクトが作成されるまでループ
         while(True):
             # ディレクトリ名を標準入力
-            if unique_name == "":
+            if name == "":
                 dir_name=input("Enter directory name, ex:test/sample")
             dir_name = self.home_dir + "/" + dir_name
 
