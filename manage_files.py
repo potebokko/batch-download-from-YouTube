@@ -1,13 +1,16 @@
 import os
 
 class FileManager():
+    def __init__(self,dir=""):
+        self.home_dir = dir
+
     def make_unique_dir(self):
         dir_name = ""
         # 新規ディレクトが作成されるまでループ
         while(True):
             # ディレクトリ名を標準入力
             print("Enter directory name, ex:test/sample")
-            dir_name = input()
+            dir_name = self.home_dir + "/" + input()
 
             # ディレクトリ名に重複がない場合
             try:
@@ -45,5 +48,6 @@ class FileManager():
         return dir_name
 
 if __name__ == "__main__":
-    fm = FileManager()
-    fm.make_dir()
+    home_dir = input("input home directory : ")
+    fm = FileManager(home_dir)
+    fm.make_unique_dir()
